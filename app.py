@@ -27,10 +27,8 @@ filtered_df = df[   ##Data updates based on user input
     (df["Year"] <= year_range[1])
 ]
 
-# =========================
-# INSIGHT TAGS (KPIs)
-# =========================
-st.subheader("📊 Key Insights")
+
+st.subheader("Key Insights")
 
 c1, c2, c3, c4 = st.columns(4)
 
@@ -47,9 +45,7 @@ else:
 
 st.markdown("---")
 
-# =========================
-# MAIN VISUALIZATIONS
-# =========================
+#Main visualizaions
 col1, col2 = st.columns(2)
 
 # Trend
