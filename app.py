@@ -37,7 +37,7 @@ c2.metric("Year Range", f"{year_range[0]} - {year_range[1]}")
 c3.metric("Max Emissions", round(df["Value"].max(), 2))
 c4.metric("Avg Emissions", round(df["Value"].mean(), 2))
 
-# Simple interpretive insights
+# Simple interpretive insight based on average emissions
 if filtered_df["Value"].mean() > df["Value"].mean():
     st.error("⚠ Emissions in selected range are ABOVE global average")
 else:
