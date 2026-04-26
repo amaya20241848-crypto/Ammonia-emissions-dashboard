@@ -1,23 +1,15 @@
-import streamlit as st
+import streamlit as st   ##Imports libraries
 import pandas as pd
 
-# =========================
-# PAGE CONFIG
-# =========================
-st.set_page_config(page_title="Ammonia Emissions Dashboard", layout="wide")
+st.set_page_config(page_title="Ammonia Emissions Dashboard", layout="wide") ##sets page layout
 
-st.title("🌍 Ammonia Emissions from Agriculture")
+st.title("Ammonia Emissions from Agriculture")  #Displays title on screen
 st.markdown("Analyze emissions across countries and years")
 
-# =========================
-# LOAD DATA
-# =========================
-df = pd.read_csv("Amonia_emission_from_agriculture.csv")
+df = pd.read_csv("Amonia_emission_from_agriculture.csv")  ##loads datafrom csv file
 df.columns = df.columns.str.strip()
 
-# =========================
-# SIDEBAR FILTERS
-# =========================
+#Sidebar filters for user interaction
 st.sidebar.header("Filters")
 
 country = st.sidebar.selectbox("Select Country", sorted(df["Country"].unique()))
