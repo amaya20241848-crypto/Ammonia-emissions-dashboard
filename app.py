@@ -60,10 +60,8 @@ with col2:
     top_df = df[df["Year"] == latest_year].sort_values(by="Value", ascending=False).head(10)
     st.bar_chart(top_df.set_index("Country")["Value"])
 
-# =========================
-# COUNTRY COMPARISON
-# =========================
-st.subheader("🌍 Country Comparison")
+#Country comparison
+st.subheader("Country Comparison")
 
 selected_countries = st.multiselect(
     "Select countries to compare",
