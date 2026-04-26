@@ -80,15 +80,11 @@ st.line_chart(compare_df.pivot(index="Year", columns="Country", values="Value"))
 st.markdown("---")
 
 
-# =========================
-# DATA PREVIEW
-# =========================
+#Data review
 with st.expander("🔍 View Data"):
     st.dataframe(filtered_df)
 
-# =========================
-# FOOTER INSIGHTS
-# =========================
+#footer insights
 st.success("Higher emissions are concentrated in top-ranked countries.")
 st.warning("Emissions vary significantly across regions and years.")
 st.info("Use filters to explore specific time periods and countries.")
