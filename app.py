@@ -21,10 +21,7 @@ year_range = st.sidebar.slider(
     (int(df["Year"].min()), int(df["Year"].max()))
 )
 
-# =========================
-# FILTERED DATA
-# =========================
-filtered_df = df[
+filtered_df = df[   ##Data updates based on user input
     (df["Country"] == country) &
     (df["Year"] >= year_range[0]) &
     (df["Year"] <= year_range[1])
