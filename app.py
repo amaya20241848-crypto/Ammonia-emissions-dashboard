@@ -5,6 +5,7 @@ st.set_page_config(page_title="Ammonia Emissions Dashboard", layout="wide") ##se
 
 st.title("Ammonia Emissions from Agriculture")  #Displays title on screen
 st.markdown("Analyze emissions across countries and years")
+st.caption("Unit: Tonnes | Time Frequency: Annual")
 
 df = pd.read_csv("Amonia_emission_from_agriculture.csv")  ##loads datafrom csv file
 df.columns = df.columns.str.strip()
@@ -34,8 +35,8 @@ c1, c2, c3, c4 = st.columns(4)
 
 c1.metric("Selected Country", country)
 c2.metric("Year Range", f"{year_range[0]} - {year_range[1]}")
-c3.metric("Max Emissions", round(df["Value"].max(), 2))
-c4.metric("Avg Emissions", round(df["Value"].mean(), 2))
+c3.metric("Max Emissions (tonnes)", round(df["Value"].max(), 2))
+c4.metric("Avg Emissions (tonnes)", round(df["Value"].mean(), 2))
 
 # Simple interpretive insight based on average emissions
 if filtered_df["Value"].mean() > df["Value"].mean():
